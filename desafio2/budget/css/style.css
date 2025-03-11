@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #1abc9c;
+  --text-color: #ecf0f1;
+  --background-color: #ecf0f1;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-color: #bdc3c7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: var(--primary-color);
+  color: var(--text-color);
+  padding: 20px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 5px var(--shadow-color);
+}
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.sidebar a {
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 18px;
+}
+.sidebar a:hover {
+  background: var(--accent-color);
+  border-radius: 5px;
+}
+
+/* Main Content */
+.main {
+  margin-left: 250px;
+  padding: 20px;
+  width: calc(100% - 250px);
+}
+.main h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Card */
+.card {
+  background: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px var(--shadow-color);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.card p {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+/* Header */
+.header {
+  background: var(--background-color);
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+.header a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+.header a:hover {
+  text-decoration: underline;
+}
+
+/* User List */
+.user-list {
+  background: var(--background-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px var(--shadow-color);
+}
+.user-list h2 {
+  margin-bottom: 20px;
+}
+.user-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.user-list table, .user-list th, .user-list td {
+  border: 1px solid var(--border-color);
+}
+.user-list th, .user-list td {
+  padding: 10px;
+  text-align: left;
+}
+.user-list th {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
