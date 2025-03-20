@@ -1,4 +1,4 @@
-<<?php
+<?php
 $dbServername = "localhost";
 $dbUsername = "root";
 $dbPassword = "";
@@ -10,6 +10,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
 } catch (PDOException $e) {
-    
-    exit("Connection failed: " . $e->getMessage());
+    error_log("Connection failed: " . $e->getMessage());
+    exit("Connection failed.");
 }
+?>

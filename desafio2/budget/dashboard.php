@@ -1,28 +1,46 @@
-<?php
-session_start(); // Start the session
-
-if (isset($_SESSION["useruid"])) { // Match the key set in loginUser
-    echo "<h1>Bienvenido to the dashboard, " . $_SESSION["useruid"] . "!</h1>";
-} else {
-    header("location: login.php");
-    exit();
-}
-?>
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Estado Financiero Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./css/general.css">
 </head>
 <body>
-    <div class="wrapper">
-        <h1>Dashboard</h1>
-        <p>¡Bienvenido al dashboard!</p>
-        <a href="includes/logout.inc.php">Cerrar Sesión</a>
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="?page=home">Home</a></li>    
+            <li><a href="?page=income">Registrar Entrada</a></li>
+            <li><a href="?page=expenses">Registrar Salida</a></li>
+            <li><a href="?page=incomereport">Ver Entradas</a></li>
+            <li><a href="?page=expensesreport">Ver Salidas</a></li>
+            <li><a href="?page=balance">Mostrar Balance</a></li>
+            <li><a href="?page=logout">Cerrar Sesión</a></li>
+        </ul>
     </div>
-</body>
+    <div class="content">
+        <?php
+        // Get the page parameter from URL
+        $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+
+        // Define available pages
+        $allowed_pages = ['home', 'income', 'expenses', 'incomereport', 'expensesreport', 'balance', 'logout'];
+
+        // Check if requested page is allowed, otherwise show home
+        if (!in_array($page, $allowed_pages)) {
+            $page = 'home';
+        }
+
+        // Include the content based on the page parameter
+        $content_file = "pages/{$page}.php";
+        
+        if (file_exists($content_file)) {
+            include $content_file;
+        } else {
+            echo "<h1>Page not found</h1>";
+            error_log("Page not found: " . $content_file);
+        }
+        ?>
+    </div>
+</body> 
 </html>
