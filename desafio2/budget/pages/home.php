@@ -19,6 +19,17 @@ if (isset($_SESSION["useruid"])) { // Match the key set in loginUser
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
+<?php
+    if (isset($_SESSION['error'])) {
+        echo "<p style='color: red;'>{$_SESSION['error']}</p>";
+        unset($_SESSION['error']); // Clear the error message
+    }
+
+    if (isset($_SESSION['success'])) {
+        echo "<p style='color: green;'>{$_SESSION['success']}</p>";
+        unset($_SESSION['success']); // Clear the success message
+    }
+    ?>
     <div class="wrapper">
        
     </div>

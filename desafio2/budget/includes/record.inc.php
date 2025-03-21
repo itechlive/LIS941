@@ -25,11 +25,15 @@ try {
 
     // Validate input
     if (empty($categoryId) || empty($fecha) || empty($amount)) {
-        die("Todos los campos requeridos deben ser completados.");
+        $_SESSION['error'] = "Todos los campos requeridos deben ser completados.";
+        header("Location: ../income.php");
+        exit();
     }
 
     if (!is_numeric($amount) || $amount <= 0) {
-        die("El monto debe ser un número positivo.");
+        $_SESSION['error'] = "El monto debe ser un número positivo.";
+        header("Location: ../income.php");
+        exit();
     }
 
     // Calculate total income and total expenses
@@ -45,7 +49,9 @@ try {
 
     // Check if the new expense exceeds the available funds
     if ($typeId == 2 && ($totalExpense + $amount) > $totalIncome) {
-        die("No hay suficientes fondos para esta transacción.");
+        $_SESSION['error'] = "No hay suficientes fondos para esta transacción.";
+        header("Location: ../income.php");
+        exit();
     }
 
     // Handle file upload if present
@@ -66,10 +72,14 @@ try {
             if (move_uploaded_file($_FILES['factura']['tmp_name'], $uploadFile)) {
                 $factura = $uploadFile; // Store the full path in $factura
             } else {
-                die("Error al subir el archivo. Verifica permisos o existencia del directorio.");
+                $_SESSION['error'] = "Error al subir el archivo. Verifica permisos o existencia del directorio.";
+                header("Location: ../income.php");
+                exit();
             }
         } else {
-            die("Archivo no válido. Solo se permiten imágenes JPEG, PNG o GIF de hasta 5MB.");
+            $_SESSION['error'] = "Archivo no válido. Solo se permiten imágenes JPEG, PNG o GIF de hasta 5MB.";
+            header("Location: ../income.php");
+            exit();
         }
     }
 
@@ -88,13 +98,19 @@ try {
         ':factura' => $factura
     ]);
 
-    echo "Entrada registrada exitosamente.";
+    $_SESSION['success'] = "Datos registrados exitosamente.";
+    header("Location: ../dashboard.php");
+    exit();
     
 } catch (PDOException $e) {
     error_log("Database error: " . $e->getMessage());
-    echo "Error al registrar la entrada. Detalle: " . $e->getMessage();
+    $_SESSION['error'] = "Error al registrar los datos. Detalle: " . $e->getMessage();
+    header("Location: ../dashboard.php");
+    exit();
 } catch (Exception $e) {
     error_log("General error: " . $e->getMessage());
-    echo "Error.";
+    $_SESSION['error'] = "Error.";
+    header("Location: ../dashboard.php");
+    exit();
 }
 ?>
