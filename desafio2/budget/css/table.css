@@ -1,10 +1,12 @@
 :root {
-  --color-primary: #26890d;
-  --color-primary-hover: #046a38;
-  --color-secondary: #86bc25;
-  --color-text: rgba(0, 0, 0, 0.87);
-  --color-background: rgba(0, 0, 0, 0.12);
+  --color-primary: #5e81ac; /* Azul suave para el color primario */
+  --color-primary-hover: #4c70a4; /* Azul un poco más oscuro para hover */
+  --color-secondary: #88c0d0; /* Azul claro para el color secundario */
+  --color-text: #333333; /* Texto oscuro para buen contraste */
+  --color-background: #f0f4f8; /* Fondo suave y claro */
+  --color-border: #d8dee9; /* Borde suave para elementos */
   --font-stack-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --transition-duration: 0.3s; /* Transiciones suaves */
 }
 
 /* Global Styles */
@@ -21,88 +23,97 @@ body {
   color: var(--color-text);
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: var(--color-background);
 }
 
 a {
   color: var(--color-primary);
   text-decoration: none;
-  
-  &:hover,
-  &:focus {
-      color: var(--color-primary-hover);
-  }
+  transition: color var(--transition-duration);
 }
 
+a:hover,
+a:focus {
+  color: var(--color-primary-hover);
+}
+
+/* Container */
 .container {
   margin: 5% auto;
   padding: 2%;
-  max-width: 75em;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  max-width: 80em; /* Mayor espacio para el contenedor */
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+  border-radius: 12px; /* Bordes más redondeados */
+  overflow: hidden;
 }
 
+/* Table Styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em; /* Espacio adicional debajo de la tabla */
 }
 
 th, td {
-  padding: 0.75em;
+  padding: 1em; /* Espacio mayor para celdas */
   text-align: left;
-  border-bottom: 1px solid var(--color-background);
+  border-bottom: 2px solid var(--color-border);
 }
 
 th {
   background-color: var(--color-primary);
-  color: #fff;
-  font-weight: normal;
+  color: #black;
+  font-weight: bold; /* Negritas para los encabezados */
+  text-transform: uppercase; /* Textos en mayúsculas */
 }
 
 tr:nth-of-type(even) {
-  background-color: var(--color-background);
+  background-color: #edf2f7; /* Fondo alterno más suave para las filas */
 }
 
 tr:hover {
-  background-color: #e0e0e0;
+  background-color: #e4f1ff; /* Efecto de hover en fila con un fondo más suave */
 }
 
 td a {
   color: var(--color-primary);
-  
-  &:hover {
-      color: var(--color-primary-hover);
-  }
+  transition: color var(--transition-duration);
 }
 
+td a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Responsive Design */
 @media (max-width: 48em) {
   th, td {
-      display: block;
-      width: 100%;
+    display: block;
+    width: 100%;
+    padding-left: 1.5em; /* Mayor espacio para el texto */
   }
-  
+
   th {
-      position: absolute;
-      clip: rect(1px, 1px, 1px, 1px);
-      height: 1px;
-      width: 1px;
-      overflow: hidden;
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
   }
-  
+
   td {
-      position: relative;
-      padding-left: 50%;
+    position: relative;
+    padding-left: 50%;
   }
-  
+
   td::before {
-      content: attr(data-title);
-      position: absolute;
-      left: 0;
-      width: 45%;
-      padding-left: 0.75em;
-      font-weight: bold;
-      white-space: nowrap;
+    content: attr(data-title);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 1em;
+    font-weight: bold;
+    color: var(--color-primary); /* Colocamos el color primario en los títulos de las filas */
+    white-space: nowrap;
   }
 }

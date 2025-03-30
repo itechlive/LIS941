@@ -7,7 +7,17 @@ $bp-bart: 48em;
 $bp-marge: 62em;
 $bp-homer: 75em;
 
-// Styles
+// Colors
+$color-primary: #6c5b7b; /* Color suave para el encabezado y enlaces */
+$color-primary-hover: #9a8c98; /* Hover más suave */
+$color-secondary: #f7b7a3; /* Color secundario suave */
+$color-background: #f4f4f9; /* Fondo suave y claro */
+$color-border: #e1d9e0; /* Borde sutil para las tablas y elementos */
+$color-text: #333; /* Color del texto principal */
+
+$font-stack-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+/* Global Styles */
 html {
   box-sizing: border-box;
 }
@@ -20,21 +30,33 @@ html {
 
 body {
   font-family: $font-stack-system;
-  color: rgba(0,0,0,.87);
+  color: $color-text;
+  background-color: $color-background;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
 a {
-  color: rgba(38,137,13,1);
-  
+  color: $color-primary;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
   &:hover,
   &:focus {
-    color: rgba(4,106,56,1); 
+    color: $color-primary-hover;
   }
 }
 
+/* Container */
 .container {
   margin: 5% 3%;
-  
+  padding: 2%;
+  background-color: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 12px;
+  border: 1px solid $color-border;
+
   @media (min-width: $bp-bart) {
     margin: 2%; 
   }
@@ -45,19 +67,21 @@ a {
   }
 }
 
+/* Table Styles */
 .responsive-table {
   width: 100%;
   margin-bottom: 1.5em;
   border-spacing: 0;
+  border-radius: 8px;
   
   @media (min-width: $bp-bart) {
-    font-size: .9em; 
-  }
-  
-  @media (min-width: $bp-marge) {
     font-size: 1em; 
   }
   
+  @media (min-width: $bp-marge) {
+    font-size: 1.1em; 
+  }
+
   thead {
     // Accessibly hide <thead> on narrow viewports
     position: absolute;
@@ -78,11 +102,12 @@ a {
     }
     
     th {
-      background-color: rgba(38,137,13,1);
-      border: 1px solid rgba(134,188,37,1);
+      background-color: $color-primary;
+      border: 1px solid $color-border;
       font-weight: normal;
       text-align: center;
-      color: white;
+      color: #fff;
+      padding: 1em;
       
       &:first-of-type {
         text-align: left; 
@@ -90,51 +115,50 @@ a {
     }
   }
   
-  // Set these items to display: block for narrow viewports
   tbody,
   tr,
   th,
   td {
     display: block;
-    padding: 0;
+    padding: 0.75em;
     text-align: left;
     white-space: normal;
+    background-color: $color-background;
   }
-  
-  tr {   
-    @media (min-width: $bp-bart) {
-      // Undo display: block 
-      display: table-row; 
+
+  tr {
+    margin-bottom: 1em;
+    
+    &:last-of-type {
+      margin-bottom: 0; 
+    }
+
+    &:nth-of-type(even) {
+      background-color: #f9f9f9;
+    }
+
+    &:hover {
+      background-color: #e8e8e8; /* Suave hover en fila */
     }
   }
-  
+
   th,
   td {
-    padding: .5em;
+    padding: .75em;
     vertical-align: middle;
     
-    @media (min-width: $bp-lisa) {
-      padding: .75em .5em; 
-    }
-    
     @media (min-width: $bp-bart) {
-      // Undo display: block 
       display: table-cell;
-      padding: .5em;
-    }
-    
-    @media (min-width: $bp-marge) {
-      padding: .75em .5em; 
     }
     
     @media (min-width: $bp-homer) {
-      padding: .75em; 
+      padding: 1em;
     }
   }
   
   caption {
     margin-bottom: 1em;
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: bold;
     text-align: center;
     
@@ -144,68 +168,44 @@ a {
   }
   
   tfoot {
-    font-size: .8em;
+    font-size: .9em;
     font-style: italic;
-    
-    @media (min-width: $bp-marge) {
-      font-size: .9em;
-    }
+    color: #777;
   }
   
   tbody {
-    @media (min-width: $bp-bart) {
-      // Undo display: block 
-      display: table-row-group; 
-    }
-    
     tr {
       margin-bottom: 1em;
-      
-      @media (min-width: $bp-bart) {
-        // Undo display: block 
-        display: table-row;
-        border-width: 1px;
-      }
-      
-      &:last-of-type {
-        margin-bottom: 0; 
-      }
-      
-      &:nth-of-type(even) {
-        @media (min-width: $bp-bart) {
-          background-color: rgba(0,0,0,.12);
-        }
+      border-radius: 8px;
+
+      &:hover {
+        background-color: #f0f0f0;
       }
     }
     
     th[scope="row"] {
-      background-color: rgba(38,137,13,1);
-      color: white;
-      
-      @media (min-width: $bp-lisa) {
-        border-left: 1px solid rgba(134,188,37,1);
-        border-bottom: 1px solid rgba(134,188,37,1);
-      }
-      
+      background-color: $color-primary;
+      color: #fff;
+      padding-left: 1.5em;
+
       @media (min-width: $bp-bart) {
         background-color: transparent;
-        color: rgba(0,0,0.87);
+        color: $color-text;
         text-align: left;
       }
     }
     
     td {
-      text-align: right;
+      text-align: center;
       
       @media (min-width: $bp-bart) {
-        border-left: 1px solid rgba(134,188,37,1);
-        border-bottom: 1px solid rgba(134,188,37,1);
-        text-align: center; 
+        border-left: 1px solid $color-border;
+        border-bottom: 1px solid $color-border;
       }
-      
+
       &:last-of-type {
         @media (min-width: $bp-bart) {
-          border-right: 1px solid rgba(134,188,37,1);
+          border-right: 1px solid $color-border;
         } 
       }
     }
@@ -216,18 +216,18 @@ a {
     
     td[data-title]:before {
       content: attr(data-title);
-      float: left;
-      font-size: .8em;
-      color: rgba(0,0,0,.54);
+      font-size: 0.85em;
+      color: #777;
+      display: inline-block;
+      padding-right: 5px;
       
       @media (min-width: $bp-lisa) {
-        font-size: .9em; 
+        font-size: 1em; 
       }
       
       @media (min-width: $bp-bart) {
-        // Don’t show data-title labels 
-        content: none; 
+        content: none;
       }
-    } 
+    }
   }
 }

@@ -1,8 +1,9 @@
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y profesional */
 }
 
 body {
@@ -10,61 +11,68 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(../img/hero1.jpg) no-repeat center center/cover;
+    background: #dcdcdc; /* Fondo gris más oscuro */
 }
 
+/* Wrapper Styles */
 .wrapper {
     width: 100%;
-    max-width: 500px; 
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2); 
-    color: white;
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px); 
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.85); /* Fondo blanco translúcido */
+    border: 2px solid rgba(0, 0, 0, 0.1); /* Borde gris oscuro */
+    color: black; /* Texto negro para mayor contraste */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque en el fondo */
 }
-
 
 .wrapper h1 {
     font-size: 36px;
     text-align: center;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #2c3e50; /* Color oscuro para el título */
 }
 
 .wrapper p a {
-    color: white;
-    text-decoration: none; 
-
-}
-    .wrapper p a:hover {
-    color: lightgray; 
-
-
+    color: #3498db; /* Enlace azul */
+    text-decoration: none;
+    font-size: 16px;
 }
 
+.wrapper p a:hover {
+    color: #2980b9; /* Enlace azul oscuro al pasar el mouse */
+}
+
+/* Input Box Styles */
 .input-box {
     width: 100%;
     height: 50px;
-    margin: 30px 0; 
-    position: relative; 
+    margin: 20px 0;
+    position: relative;
 }
 
 .input-box input {
     width: 100%;
     height: 100%;
-    background: transparent;
-    border: none;
+    background: #fff; /* Fondo blanco */
+    border: 2px solid #ddd; /* Borde gris claro */
     outline: none;
-    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 40px;
     font-size: 16px;
-    color: white;
-    padding: 0 45px 0 20px; 
+    color: #333; /* Color de texto negro oscuro */
+    padding: 0 45px 0 20px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .input-box input::placeholder {
-    color: white;
+    color: #7f8c8d; /* Placeholder gris claro */
+}
+
+.input-box input:focus {
+    border-color: #f39c12; /* Borde naranja brillante al enfocar */
+    box-shadow: 0 0 8px rgba(243, 156, 18, 0.3); /* Sombra suave al enfocar */
 }
 
 .input-box i {
@@ -72,24 +80,46 @@ body {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 20px;
+    font-size: 18px;
+    color: #7f8c8d;
 }
 
-
+/* Button Styles */
 .btn {
     width: 100%;
     height: 50px;
-    background: white;
+    background: #f39c12; /* Fondo naranja */
     border: none;
     outline: none;
     border-radius: 40px;
     font-size: 18px;
-    color: black;
+    color: white;
     cursor: pointer;
-    margin: 20px 0;
-    transition: background 0.3s; 
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
 .btn:hover {
-    background: lightgray; 
+    background: #e67e22; /* Fondo naranja más oscuro */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
 }
+
+/* Small Screen Adjustments (Responsive Design) */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 20px;
+    }
+
+    .wrapper h1 {
+        font-size: 28px;
+    }
+
+    .input-box input {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}
+
