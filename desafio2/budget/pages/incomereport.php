@@ -1,4 +1,8 @@
 <?php
+/*Integrantes del Proyecto:
+MERCEDES GUADALUPE - PR210566
+DIEGO JOSUÉ - PA232942
+DAVID ORELLANA - OG231911*/
 session_start(); 
 ?>
 <!DOCTYPE html>
@@ -37,7 +41,7 @@ try {
     echo "<table border='1'>";
     echo "<tr><th>Transaccion</th><th>Categoria</th><th>Descripcion</th><th>Fecha</th><th>Monto</th><th>Recibo</th></tr>";
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $receiptPath = '/budget/' . htmlspecialchars($row['receipt']);
+        $receiptPath = '/LIS941/desafio2/budget/uploads/' . htmlspecialchars($row['receipt']);
         echo "<tr>";
         echo "<td>" . htmlspecialchars($row['transactionId']) . "</td>";
         echo "<td>" . htmlspecialchars($row['categoryName']) . "</td>";

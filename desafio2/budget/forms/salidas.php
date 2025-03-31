@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../css/forms.css">
 </head>
 <body>
+    <!--Integrantes del Proyecto:
+    MERCEDES GUADALUPE - PR210566
+    DIEGO JOSUÉ - PA232942
+    DAVID ORELLANA - OG231911-->
     <div class="container">
         <h2>Registrar Salidas</h2>
         <form action="../includes/salidas.inc.php" method="post" enctype="multipart/form-data">

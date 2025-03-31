@@ -1,3 +1,9 @@
+<?php
+/*Integrantes del Proyecto:
+MERCEDES GUADALUPE - PR210566
+DIEGO JOSUÉ - PA232942
+DAVID ORELLANA - OG231911*/
+?>
 <!DOCTYPE html>
 <html lang="=es">
 <head>
@@ -45,6 +51,7 @@
         </div>
 
         <button type="submit" name="submit" class="btn">Registrar</button>
+        <a href="./login.php" class="btn-regresar">Regresar</a>
                        
     </form>
 <?php

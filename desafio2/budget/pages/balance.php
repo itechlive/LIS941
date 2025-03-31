@@ -1,4 +1,8 @@
 <?php
+/*Integrantes del Proyecto:
+MERCEDES GUADALUPE - PR210566
+DIEGO JOSUÉ - PA232942
+DAVID ORELLANA - OG231911*/
 $dbServername = "localhost";
 $dbUsername = "root";
 $dbPassword = "";

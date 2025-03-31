@@ -9,6 +9,10 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <!--Integrantes del Proyecto:
+    MERCEDES GUADALUPE - PR210566
+    DIEGO JOSUÉ - PA232942
+    DAVID ORELLANA - OG231911-->
     <div class="wrapper">
         <h1>Inicio de Sesi&oacute;n</h1>
     <form action="includes/login.inc.php" method="POST">

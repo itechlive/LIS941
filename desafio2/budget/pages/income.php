@@ -1,4 +1,8 @@
 <?php
+/*Integrantes del Proyecto:
+MERCEDES GUADALUPE - PR210566
+DIEGO JOSUÉ - PA232942
+DAVID ORELLANA - OG231911*/
 session_start(); 
 ?>
 <!DOCTYPE html>
@@ -63,6 +67,7 @@ session_start();
             <input type="hidden" name="typeId" value="1">
             <div class="form-group">
                 <input type="submit" value="Registrar Entrada">
+                <a href="../dashboard.php" class="btn-regresar">Regresar</a>
             </div>
         </form>
     </div>
