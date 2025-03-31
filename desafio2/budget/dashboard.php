@@ -10,7 +10,7 @@
         <h2>Dashboard</h2>
         <ul>
             <li><a href="?page=home">Home</a></li>    
-            <li><a href="?page=income">Registrar Entrada</a></li>
+            <li><a href="/LIS941/desafio2/budget/pages/income.php">Registrar Entrada</a></li>
             <li><a href="?page=expenses">Registrar Salida</a></li>
             <li><a href="?page=incomereport">Ver Entradas</a></li>
             <li><a href="?page=expensesreport">Ver Salidas</a></li>
@@ -20,20 +20,12 @@
     </div>
     <div class="content">
         <?php
-        // Get the page parameter from URL
         $page = isset($_GET['page']) ? $_GET['page'] : 'home';
-
-        // Define available pages
         $allowed_pages = ['home', 'income', 'expenses', 'incomereport', 'expensesreport', 'balance', 'logout'];
-
-        // Check if requested page is allowed, otherwise show home
         if (!in_array($page, $allowed_pages)) {
             $page = 'home';
         }
-
-        // Include the content based on the page parameter
         $content_file = "pages/{$page}.php";
-        
         if (file_exists($content_file)) {
             include $content_file;
         } else {

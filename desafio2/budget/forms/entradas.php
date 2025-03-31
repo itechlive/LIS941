@@ -9,32 +9,35 @@
 <body>
     <div class="container">
         <h2>Registrar Entrada</h2>
-        <form action="../includes/entradas.inc.php" method="post" enctype="multipart/form-data">
+        <form action="/LIS941/desafio2/budget/includes/record.inc.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="categoriesId">Categoría:</label>
                 <select name="categoriesId" required>
                     <option value="">Seleccione una categoría</option>
                     <?php
-                    require_once '../includes/dbh.inc.php'; // Connector de la base de datos
-
-                    // Selecionar categorías de la base de datos
-                    $sql = "SELECT categoriesId, categoryName FROM categories";
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
-                            echo "<option value='" . $row['categoriesId'] . "'>" . $row['categoryName'] . "</option>";
+                    try {
+                        require_once '../includes/dbh.inc.php'; // Carga $pdo
+                        $sql = "SELECT categoriesId, categoryName FROM categories";
+                        $stmt = $pdo->query($sql); // Usa PDO
+                        if ($stmt->rowCount() > 0) {
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                echo "<option value='" . $row['categoriesId'] . "'>" . $row['categoryName'] . "</option>";
+                            }
+                        } else {
+                            echo "<option value=''>No hay categorías disponibles</option>";
                         }
-                    } else {
-                        echo "<option value=''>No hay categorías disponibles</option>";
+                    } catch (Exception $e) {
+                        echo "<option value=''>Error: " . $e->getMessage() . "</option>";
                     }
-
-                    $conn->close();
                     ?>
                 </select>
             </div>
             <div class="form-group">
-                <label for="eventDate">Fecha del Regristro:</label>
+                <label for="description">Descripción de la Transacción:</label>
+                <input type="text" name="description">
+            </div>
+            <div class="form-group">
+                <label for="eventDate">Fecha del Registro:</label>
                 <input type="date" name="eventDate" required>
             </div>
             <div class="form-group">
