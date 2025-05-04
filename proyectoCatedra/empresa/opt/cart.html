@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="shopApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito - Calzado y Moda</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://kit.fontawesome.com/489b0ad0ad.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../updateCartIcon.js"></script>
+</head>
+<body ng-controller="shopController">
+<section id="header">
+    <a href="#"><img src="../img/logo.png" class="logo" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../opt/shop.html">Tienda</a></li>
+            <li><a href="../opt/contact.html">Contacto</a></li>
+            <li><a href="../opt/about.html">Acerca</a></li>
+            <li><a class="active" href="../opt/cart.html"><i class="fa fa-shopping-cart"></i><span id="cart-plus-sign"></span></a></li>
+            <li><a href="../opt/login.html"><i class="fa fa-user"></i></a></li>
+        </ul>
+    </div>
+</section>
+<div id="content">
+    <script src="../cart.js"></script>
+</div>
+<div id="actions">
+    <button id="checkoutButton" onclick="checkout()">Comprar</button>
+    <script>
+        function checkout() {
+            window.open('../opt/checkout.html', '_blank', 'height=600,width=800');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let checkoutButton = document.getElementById('checkoutButton');
+            if (cart.length === 0) {
+                checkoutButton.disabled = true;
+            }
+        });
+    </script>
+
+    <button onclick="back()">Volver</button>
+    <script>
+        function back() {
+            window.location.href = '../opt/shop.html';
+        }
+    </script>
+    <button onclick="clearCart()">Limpiar carrito</button>
+    <script>
+        function clearCart() {
+            Swal.fire({
+                title: 'Estas Seguro?',
+                text: "Esto eliminara los productos agregados al carrito de compras!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si Limpialo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.removeItem('cart');
+                    Swal.fire(
+                        'Limpiado!',
+                        'Se ha vaciado el carrito.',
+                        'success'
+                    ).then(() => {
+                        location.reload();
+                    })
+                }
+            })
+        }
+    </script>
+</div>
+</body>
+</html>

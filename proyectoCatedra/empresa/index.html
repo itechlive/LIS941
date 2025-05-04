@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>La Coponera SV</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/489b0ad0ad.js" crossorigin="anonymous"></script>
+    <script src="updateCartIcon.js"></script>
+
+</head>
+<body>
+<section id="header">
+    <a href="#"><img src="img/logo.png" class="logo" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a class ="active" href="index.html">Inicio</a></li>
+            <li><a href="opt/shop.html">Tienda</a></li>
+            <li><a href="opt/contact.html">Contacto</a></li>
+            <li><a href="opt/registry.html">Registrate</a></li>
+            <li><a href="opt/cart.html"><i class="fa fa-shopping-cart"></i><span id="cart-plus-sign"></span></a></li>
+            <li><a href="opt/login.html"><i class="fa fa-user"></i></a></li>
+
+        </ul>
+    </div>
+</section>
+<div id="content">
+
+    <section id="hero">
+        <h4>LA COPONERA S.V.</h4>
+        <h2>Las mejores ofertas</h2>
+        <h1>de las mejores empresas de la region</h1>
+        <p id="phero">Ahorre hasta el 50% de ahorro al comprar con nosotros</p>
+        <button onclick="now()">Comprar ahora</button>
+        <script>
+            function now() {
+                window.location.href = 'opt/shop.html';
+            }
+        </script>
+    </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="shopApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda - Calzado y Moda</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://kit.fontawesome.com/489b0ad0ad.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../updateCartIcon.js"></script>
+</head>
+<body ng-controller="shopController">
+<section id="header">
+    <a href="#"><img src="../img/logo.png" class="logo" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a class="active" href="shop.html">Tienda</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+            <li><a href="about.html">Acerca</a></li>
+            <li><a class ="active" href="cart.html"><i class="fa fa-shopping-cart"></i><span id="cart-plus-sign"></span></a></li>
+            <li><a href="../opt/login.html"><i class="fa fa-user"></i></a></li>
+        </ul>
+    </div>
+</section>
+
+<div id="content">
+    <section id="shop">
+        <main>
+            <div>
+                <label for="category">Categoria:</label>
+                <select id="category" ng-model="selectedCategory" ng-options="category for category in categories">
+                    <option value="">Todo</option>
+                </select>
+            </div>
+            <div>
+                <label for="search">Busqueda:</label>
+                <input id="search" type="text" ng-model="searchName" placeholder="Por Nombre">
+            </div>
+            <div class="products">
+                <div class="product" ng-repeat="product in filteredProducts = (products | filter:customFilter)">
+                    <img ng-src="{{product.image}}" alt="{{product.description}}">
+                    <p class="title">{{product.title}}</p>
+                    <p class="description">{{product.description}}</p>
+                    <p class="price">
+                        <span>$</span>
+                        <span>{{product.price}}</span>
+                    </p>
+                    <p class="cart" ng-click="addToCart(product.title, product.description, product.price, product.discount)">Agregar <i class="fas fa-shopping-cart"></i></p>
+                </div>
+            </div>
+        </main>
+    </section>
+</div>
+
+<script src="../script.js"></script>
+</body>
+</html>

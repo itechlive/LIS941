@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="shopApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Calzado y Moda</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://kit.fontawesome.com/489b0ad0ad.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../updateCartIcon.js"></script>
+</head>
+<body ng-controller="shopController">
+<section id="header">
+    <img src="../img/logo.png" class="logo" alt="">
+    <div>
+        <ul id="navbar">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../opt/shop.html">Tienda</a></li>
+            <li><a href="../opt/contact.html">Contacto</a></li>
+            <li><a href="../opt/about.html">Acerca</a></li>
+            <li><a href="../opt/cart.html"><i class="fa fa-shopping-cart"></i><span id="cart-plus-sign"></span></a></li>
+            <li><a class="active" href="../opt/login.html"><i class="fa fa-user"></i></a></li>
+        </ul>
+    </div>
+</section>
+<div class="login">
+    <h1>Inicio de sesión</h1>
+    <form id="loginForm">
+        <label for="username">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="username" placeholder="Usuario" id="username" required>
+        <label for="password">
+            <i class="fas fa-lock"></i>
+        </label>
+        <input type="password" name="password" placeholder="Contraseña" id="password" required>
+        <input type="submit" value="Iniciar sesión">
+    </form>
+</div>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let username = document.getElementById('username').value;
+        let password = document.getElementById('password').value;
+
+        fetch('../users.json')
+            .then(response => response.json())
+            .then(users => {
+                if (users[username] && users[username].password === password) {
+                    swal("Login successful!", "", "success")
+                        .then((value) => {
+                            window.location.href = '../opt/shop.html';
+                        });
+                } else {
+                    swal("Error", "El usuario o la contraseña son incorrectos", "error");
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+</body>
+</html>

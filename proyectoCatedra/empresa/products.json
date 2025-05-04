@@ -1,0 +1,138 @@
+[
+    {
+        "image": "../products/f1.jpg",
+        "title": "Limpiador Multiuso",
+        "description": "Limpiadoes industriales biodegradables para quitar grasa",
+        "category": "Industriales",
+        "discount": "10",
+        "price": "29.99"
+    },
+    {
+        "image": "../products/f2.jpg",
+        "title": "Limpiador para vidrios",
+        "description": "Remueva la grasa y manchas de vidrios sin empañar los vidrios",
+        "category": "Hogar",
+        "discount": "0",
+        "price": "4.99"
+    },
+    {
+        "image": "../products/f3.jpg",
+        "title": "Limpiadores Multiuso para el Hogar",
+        "description": "Para uso del hogar limpia y desinfecta",
+        "category": "Hogar",
+        "discount": "10",
+        "price": "29.99"
+    },
+    {
+        "image": "../products/f4.jpg",
+        "title": "Reebok",
+        "description": "Zapatos para correr con excelente soporte",
+        "category": "Mujer",
+        "discount": "20",
+        "price": "39.99"
+    },
+    {
+        "image": "../products/f5.jpg",
+        "title": "Puma",
+        "description": "Zapatos casuales para el día a día",
+        "category": "Mujer",
+        "discount": "20",
+        "price": "29.99"
+    },
+    {
+        "image": "../products/f6.jpg",
+        "title": "Under Armour",
+        "description": "Zapatos de entrenamiento duraderos",
+        "category": "Mujer",
+        "discount": "10",
+        "price": "49.99"
+    },
+    {
+        "image": "../products/f7.jpg",
+        "title": "New Balance",
+        "description": "Zapatos cómodos para caminar",
+        "category": "Mujer",
+        "discount": "5",
+        "price": "39.99"
+    },
+    {
+        "image": "../products/f8.jpg",
+        "title": "Vans",
+        "description": "Zapatos de skate de estilo clásico",
+        "category": "Mujer",
+        "discount": "20",
+        "price": "59.99"
+    },
+    {
+        "image": "../products/n1.jpg",
+        "title": "Converse",
+        "description": "Zapatos de lona icónicos",
+        "category": "Hombre",
+        "discount": "0",
+        "price": "29.99"
+    },
+    {
+        "image": "../products/n2.jpg",
+        "title": "Timberland",
+        "description": "Botas robustas para el aire libre",
+        "category": "Hombre",
+        "discount": "20",
+        "price": "39.99"
+    },
+    {
+        "image": "../products/n3.jpg",
+        "title": "Merrell",
+        "description": "Zapatos de senderismo de alta tracción",
+        "category": "Hombre",
+        "discount": "10",
+        "price": "29.99"
+    },
+    {
+        "image": "../products/n4.jpg",
+        "title": "Columbia",
+        "description": "Zapatos impermeables para todas las estaciones",
+        "category": "Hombre",
+        "discount": "10",
+        "price": "59.99"
+    },
+    {
+        "image": "../products/n5.jpg",
+        "title": "Skechers",
+        "description": "Zapatos ligeros con memoria de forma",
+        "category": "Hombre",
+        "discount": "0",
+        "price": "19.99"
+    },
+    {
+        "image": "../products/n6.jpg",
+        "title": "Clarks",
+        "description": "Zapatos de vestir de cuero",
+        "category": "Hombre",
+        "discount": "10",
+        "price": "19.99"
+    },
+    {
+        "image": "../products/n7.jpg",
+        "title": "Dr. Martens",
+        "description": "Botas de combate con suela de aire",
+        "category": "Hombre",
+        "discount": "10",
+        "price": "19.99"
+    },
+    {
+        "image": "../products/n8.jpg",
+        "title": "Gucci",
+        "description": "Zapatos de lujo italianos",
+        "category": "Hombre",
+        "discount": "0",
+        "price": "19.99"
+    },
+    {
+        "image": "../products/n9.jpg",
+        "title": "Prada",
+        "description": "Zapatos elegantes de diseño",
+        "category": "Mujer",
+        "discount": "10",
+        "price": "39.99"
+    }
+]
