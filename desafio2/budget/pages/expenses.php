@@ -1,4 +1,8 @@
 <?php
+/*Integrantes del Proyecto:
+MERCEDES GUADALUPE - PR210566
+DIEGO JOSUÉ - PA232942
+DAVID ORELLANA - OG231911*/
 session_start();
 ?>
 <!DOCTYPE html>
@@ -7,12 +11,12 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Salidas</title>
-    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="../css/general.css">
 </head>
 <body>
     <div class="container">
         <h2>Registrar Salidas</h2>
-        <form action="/budget/includes/record.inc.php" method="post" enctype="multipart/form-data">
+        <form action="../includes/record.inc.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="categoryId">Categoría:</label>
                 <select name="categoryId" required>
@@ -28,7 +32,7 @@ session_start();
                             echo "<!-- Database connection failed -->";
                         }
 
-                        // Select only income categories from the database
+                        // Select only expense categories from the database
                         $sql = "SELECT categoryId, categoryName FROM categories WHERE type = 'expenses'";
                         $stmt = $pdo->prepare($sql);
                         $stmt->execute();
@@ -45,7 +49,7 @@ session_start();
                 </select>
             </div>
             <div class="form-group">
-                <label for="description">Descripticion del la Transaccion:</label>
+                <label for="description">Descripción de la Transacción:</label>
                 <input type="text" name="description" required>
             </div>
             <div class="form-group">
@@ -57,12 +61,13 @@ session_start();
                 <input type="number" step="0.01" name="amount" required>
             </div>
             <div class="form-group">
-            <label for="factura">Recibo:</label>
-            <input type="file" name="factura" accept="image/*" required>
+                <label for="factura">Recibo:</label>
+                <input type="file" name="factura" accept="image/*" required>
             </div>
             <input type="hidden" name="typeId" value="2">
             <div class="form-group">
-                <input type="submit" value="Registrar Entrada">
+                <input type="submit" value="Registrar Salida"> <!-- Corrige el texto del botón -->
+                <a href="../dashboard.php" class="btn-regresar">Regresar</a>
             </div>
         </form>
     </div>

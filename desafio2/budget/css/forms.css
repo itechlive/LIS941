@@ -1,7 +1,7 @@
 /* style.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Poppins', sans-serif; /* Fuente moderna y fácil de leer */
+    background-color: #525252; /* Fondo aún más claro para la página */
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,51 +11,60 @@ body {
 }
 
 .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #555555; /* Fondo aún más suave para el formulario */
+    padding: 30px;
+    border-radius: 12px; /* Bordes redondeados para un look más suave */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombras más suaves */
     width: 100%;
     max-width: 500px;
 }
 
 h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #f8f8f8; /* Título más suave, gris muy claro */
     text-align: center;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 28px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
-    color: #555;
+    margin-bottom: 8px;
+    color: #e0e0e0; /* Etiquetas en gris muy claro */
+    font-weight: 500;
 }
 
 .form-group input,
 .form-group select {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #aaaaaa; /* Bordes más suaves y claros */
+    border-radius: 6px;
     box-sizing: border-box;
+    background-color: #666666; /* Fondo más suave y claro para los campos */
+    color: #f8f8f8; /* Texto blanco suave para mayor contraste */
 }
 
 .form-group input[type="file"] {
-    padding: 3px;
+    padding: 6px;
+    background-color: #666666; /* Fondo más claro para el campo de archivo */
+    color: #f8f8f8; /* Texto blanco suave */
+    border: 1px solid #aaaaaa;
 }
 
 .form-group input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #7ab3e8; /* Azul más claro y suave para el botón */
+    color: #ffffff; /* Texto blanco */
     border: none;
+    padding: 12px 20px;
     cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
 .form-group input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #6d98c7; /* Azul más suave y oscuro cuando pasa el ratón */
 }

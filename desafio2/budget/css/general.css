@@ -9,15 +9,16 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     min-height: 100vh;
-    background-color: #f4f4f9; /* Background color for forms */
+    background-color: #2d2d2d; /* Dark background for the whole body */
+    color: #e0e0e0; /* Light text color */
 }
 
 /* Sidebar Styles */
 .sidebar {
     width: 250px;
-    background-color: #333;
+    background-color: #1f1f1f; /* Darker background for sidebar */
     padding: 20px;
-    color: white;
+    color: #e0e0e0; /* Light text in the sidebar */
 }
 
 .sidebar ul {
@@ -29,26 +30,29 @@ body {
 }
 
 .sidebar ul li a {
-    color: white;
+    color: #b0b0b0; /* Softer color for links */
     text-decoration: none;
+    font-weight: 500;
 }
 
 .sidebar ul li a:hover {
-    color: #ddd;
+    color: #ffffff; /* Highlight the text on hover */
 }
 
 /* Content Styles */
 .content {
     flex-grow: 1;
     padding: 20px;
+    background-color: #3a3a3a; /* Slightly lighter dark background for content */
+    border-radius: 8px;
 }
 
 /* Form Styles */
 .container {
-    background-color: #fff;
+    background-color: #444; /* Darker container background */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Softer shadow */
     width: 100%;
     max-width: 500px;
     margin: auto; /* Center the form container */
@@ -56,7 +60,7 @@ body {
 
 h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #f0f0f0; /* Light color for the heading */
     text-align: center;
 }
 
@@ -67,30 +71,46 @@ h2 {
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: #555;
+    color: #c0c0c0; /* Softer label color */
 }
 
 .form-group input,
 .form-group select {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 12px;
+    border: 1px solid #555; /* Softer border color */
     border-radius: 4px;
-    box-sizing: border-box;
+    background-color: #2a2a2a; /* Darker input background */
+    color: #fff; /* Light text color for inputs */
 }
 
 .form-group input[type="file"] {
     padding: 3px;
+    background-color: #2a2a2a; /* Match input background */
+    color: #fff; /* Light text for file input */
 }
 
 .form-group input[type="submit"] {
-    background-color: #007bff;
+    background-color: #4caf50; /* Soft green color for submit button */
     color: #fff;
     border: none;
+    padding: 12px;
     cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
 .form-group input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Optional: Style the link (if you have any links inside the form) */
+a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #388e3c;
 }

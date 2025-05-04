@@ -1,4 +1,8 @@
 <?php
+/*Integrantes del Proyecto:
+MERCEDES GUADALUPE - PR210566
+DIEGO JOSUÉ - PA232942
+DAVID ORELLANA - OG231911*/
 $dbServername = "localhost";
 $dbUsername = "root";
 $dbPassword = "";
@@ -39,7 +43,7 @@ try {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Financial Report</title>
+    <title>Reporte Financiero</title>
     <style>
         table {
             width: 100%;
@@ -53,7 +57,7 @@ try {
             text-align: left;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #black;
         }
         .total {
             font-weight: bold;
@@ -62,7 +66,7 @@ try {
             margin-top: 20px;
         }
         .chart-container {
-            width: 30%; /* Adjusted width */
+            width: 30%; 
             margin: auto;
         }
     </style>
@@ -106,6 +110,7 @@ try {
             </tr>
         </tfoot>
     </table>
+    <div class button>
     <button class="print-button" onclick="window.print()">Imprimir Reporte</button>
 
     <div class="chart-container">
