@@ -287,24 +287,52 @@ button:hover {
     margin: 10px 0;
 }
 /* Registro */
-
+/* General reset for consistency */
 #cliente, #empresa {
-    background-size: cover;
-    background-position: center;
-    height: 400px; 
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center;
-    color: white; 
-    font-size: 30px; 
-    font-weight: bold; 
+    margin: 20px auto;
+    text-align: center;
 }
 
-#cliente {
-    background-image: url(../img/cliente.jpg); 
+
+#cliente a, #empresa a {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+    color: #fff;
+    background-color: #28a745; 
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 200px; 
+    text-align: center;
 }
 
-#empresa {
-    background-image: url('../img/empresa.jpg');
+
+#empresa a {
+    background-color: #007bff; 
+}
+
+
+#cliente a:hover, #empresa a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+
+#cliente a:focus, #empresa a:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+
+@media (max-width: 768px) {
+    #cliente a, #empresa a {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
 }

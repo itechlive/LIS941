@@ -113,6 +113,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="password" id="contrasena" name="contrasena" required>
         </div>
         <button type="submit">Iniciar Sesión</button>
+        <button type="button" onclick="window.location.href='../index.html'">Volver</button>
+        <p>¿No tienes cuenta? <a href="registro_cliente.php">Regístrate aquí</a></p>
+        <p><a href="recuperar_contrasena.php">¿Olvidaste tu contraseña?</a></p>
     </form>
 </body>
 </html>

@@ -4,11 +4,14 @@ $username = "root";
 $password = "";
 $dbname = "cuponera";
 
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Comprobar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+try {
+    // Crear conexión PDO
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // Configurar el modo de error PDO a excepción
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Opcional: Configurar el juego de caracteres a UTF-8
+    $conn->exec("SET NAMES utf8");
+} catch(PDOException $e) {
+    die("Conexión fallida: " . $e->getMessage());
 }
 ?>

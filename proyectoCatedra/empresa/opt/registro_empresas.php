@@ -149,6 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" id="puntoRef" name="puntoRef" value="<?php echo isset($_POST['puntoRef']) ? htmlspecialchars($_POST['puntoRef']) : ''; ?>">
         </div>
         <button type="submit">Registrar Empresa</button>
+        <button type="button" onclick="window.location.href='../index.html'">Volver</button>
     </form>
 </body>
 </html>
